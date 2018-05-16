@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BA150A9FE8220C29032CD64F6BC0BF4 /* Pods-MovieList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F526E756F3C5EDAF7D784BCF9E256D3F /* Pods-MovieList-dummy.m */; };
+		3CF4C508841DBF56D7993B3CB842B540 /* Pods-MovieListTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F36737635D52952606EC7638E0822B4 /* Pods-MovieListTests-dummy.m */; };
+		42A21DC1B19C4078B9D6C42883CAE949 /* RateView.h in Headers */ = {isa = PBXBuildFile; fileRef = CCE3841DF270FCAAF187003AD3A41717 /* RateView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		49B81A77706D533708B56DA802FB220B /* RateView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C16553C63F79CFF201D0147B6AEEEDA /* RateView-dummy.m */; };
+		62A9F4DD1B98156937FB7F5723C2979C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7EEA484EB7694FA7284D8DDC85E0BE41 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A68AECA82CC99BA36B719C24E7EC71C2 /* RateView.m */; };
+		8FC6D6F8A04EC132CBEDB3E7CEF70E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A002CB40CFF29786E3B518E336DB76E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D6B6BE5036091173398D259E80219117 /* Pods-MovieListUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EAE3E7AD1D428648B6067B6F064C02 /* Pods-MovieListUITests-dummy.m */; };
+		E1345EB631D2AC3C4452B06AB5D01DD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C974E1865BF232A92E817E3D72794BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B26F9E0BE64663EAA71E77B106E38C0F;
+			remoteInfo = RateView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16C28663BD97482FF1440BBB3D029BB7 /* Pods-MovieList-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieList-frameworks.sh"; sourceTree = "<group>"; };
+		1B70501BDC6F38D3A2A41FD63E7E0601 /* Pods-MovieListUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MovieListUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1FF40CB3C1B7EEF0A063C166E236505C /* Pods-MovieList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieList.release.xcconfig"; sourceTree = "<group>"; };
+		2563E80CD7E915370A12C17A2F1B77E1 /* Pods-MovieListUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieListUITests-resources.sh"; sourceTree = "<group>"; };
+		35EAE3E7AD1D428648B6067B6F064C02 /* Pods-MovieListUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MovieListUITests-dummy.m"; sourceTree = "<group>"; };
+		40E808CB4D6BF9F1CBBB2D060B5871D6 /* libPods-MovieListUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MovieListUITests.a"; path = "libPods-MovieListUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		437DFA998895812DD49AD2FD90B05A4D /* Pods-MovieList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieList.debug.xcconfig"; sourceTree = "<group>"; };
+		447D9E2B7E54F7BFA38BE381375D351A /* RateView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RateView.xcconfig; sourceTree = "<group>"; };
+		4C16553C63F79CFF201D0147B6AEEEDA /* RateView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RateView-dummy.m"; sourceTree = "<group>"; };
+		51D76EB67F24C7AC302643731CE7BC77 /* libRateView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRateView.a; path = libRateView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		54213E0957BD740BF7A46C8C2AFE071D /* Pods-MovieList-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MovieList-acknowledgements.plist"; sourceTree = "<group>"; };
+		57F421260D0B840B29D0B15AB55803DC /* libPods-MovieList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MovieList.a"; path = "libPods-MovieList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		677C5CC2FAE221FD74D3A15C904705DA /* RateView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RateView-prefix.pch"; sourceTree = "<group>"; };
+		74AFE9BDB2F43E6E3AA5A08EFA8ACEC2 /* Pods-MovieListTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieListTests-resources.sh"; sourceTree = "<group>"; };
+		7A9FFC64726647AAD830AF3F3BE8C8AD /* Pods-MovieListTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MovieListTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7D81F14E32FD5E136952B722C6DF0D20 /* Pods-MovieList-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MovieList-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F36737635D52952606EC7638E0822B4 /* Pods-MovieListTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MovieListTests-dummy.m"; sourceTree = "<group>"; };
+		882D83D1D2EF5DAD6731C4554597B0E9 /* Pods-MovieListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieListUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		890A6C6E3D70FAFDC0E8483EFD678537 /* Pods-MovieListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieListUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D6C22A5E0F4EBB56586541546EAA535 /* Pods-MovieListUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieListUITests-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A68AECA82CC99BA36B719C24E7EC71C2 /* RateView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RateView.m; path = RateView/RateView.m; sourceTree = "<group>"; };
+		A83A58B19A2759A2EF6A42E262C1390F /* Pods-MovieListTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieListTests-frameworks.sh"; sourceTree = "<group>"; };
+		AE1497E1AED929550C9D5DD9DEE20926 /* Pods-MovieListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieListTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B513ECF457C349C7E7EF7C0F12B0BE1A /* Pods-MovieList-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieList-resources.sh"; sourceTree = "<group>"; };
+		CCE3841DF270FCAAF187003AD3A41717 /* RateView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RateView.h; path = RateView/RateView.h; sourceTree = "<group>"; };
+		D30433F804F06238046763D7C62FC30C /* Pods-MovieListUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MovieListUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D4094895E48A154A6A30F11EFE5D9B27 /* Pods-MovieListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieListTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6F31B20F0F4B3DA5A8BFBDEB0C192D6 /* libPods-MovieListTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MovieListTests.a"; path = "libPods-MovieListTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F526E756F3C5EDAF7D784BCF9E256D3F /* Pods-MovieList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MovieList-dummy.m"; sourceTree = "<group>"; };
+		FC673A525FEF1CC6C5FCCCD6F176C2A5 /* Pods-MovieListTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MovieListTests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DE5B84B10D7C5304ECE2E568669C380 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC6D6F8A04EC132CBEDB3E7CEF70E24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		984E447D01ABA7B6FE5BD7ADC0D1347A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A002CB40CFF29786E3B518E336DB76E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87E13290053994DBE25E0955B921880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1345EB631D2AC3C4452B06AB5D01DD6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D0424CA5D7D680F90773780D575DC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62A9F4DD1B98156937FB7F5723C2979C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		154FC91F57ACD9EC46C5D16FB4A140E7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				447D9E2B7E54F7BFA38BE381375D351A /* RateView.xcconfig */,
+				4C16553C63F79CFF201D0147B6AEEEDA /* RateView-dummy.m */,
+				677C5CC2FAE221FD74D3A15C904705DA /* RateView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RateView";
+			sourceTree = "<group>";
+		};
+		2E1B00237F3A74288F54A54567ED25F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57F421260D0B840B29D0B15AB55803DC /* libPods-MovieList.a */,
+				E6F31B20F0F4B3DA5A8BFBDEB0C192D6 /* libPods-MovieListTests.a */,
+				40E808CB4D6BF9F1CBBB2D060B5871D6 /* libPods-MovieListUITests.a */,
+				51D76EB67F24C7AC302643731CE7BC77 /* libRateView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31096E8098DC3B65EDDC63BFE0B37116 /* RateView */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3841DF270FCAAF187003AD3A41717 /* RateView.h */,
+				A68AECA82CC99BA36B719C24E7EC71C2 /* RateView.m */,
+				154FC91F57ACD9EC46C5D16FB4A140E7 /* Support Files */,
+			);
+			name = RateView;
+			path = RateView;
+			sourceTree = "<group>";
+		};
+		43FF80237AD2F95C5EF0F3A38F3BACF7 /* Pods-MovieListUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1B70501BDC6F38D3A2A41FD63E7E0601 /* Pods-MovieListUITests-acknowledgements.markdown */,
+				D30433F804F06238046763D7C62FC30C /* Pods-MovieListUITests-acknowledgements.plist */,
+				35EAE3E7AD1D428648B6067B6F064C02 /* Pods-MovieListUITests-dummy.m */,
+				8D6C22A5E0F4EBB56586541546EAA535 /* Pods-MovieListUITests-frameworks.sh */,
+				2563E80CD7E915370A12C17A2F1B77E1 /* Pods-MovieListUITests-resources.sh */,
+				882D83D1D2EF5DAD6731C4554597B0E9 /* Pods-MovieListUITests.debug.xcconfig */,
+				890A6C6E3D70FAFDC0E8483EFD678537 /* Pods-MovieListUITests.release.xcconfig */,
+			);
+			name = "Pods-MovieListUITests";
+			path = "Target Support Files/Pods-MovieListUITests";
+			sourceTree = "<group>";
+		};
+		467FBE84491AAD48DD57EE9F61DBD835 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				816BCA6CDF7E5D9573E2AA62768AF15C /* Pods-MovieList */,
+				EFF9C5BEECC6A37A06C7ED131D9C1556 /* Pods-MovieListTests */,
+				43FF80237AD2F95C5EF0F3A38F3BACF7 /* Pods-MovieListUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				A19D2761D43DF30EDEF903550B39FA1B /* Pods */,
+				2E1B00237F3A74288F54A54567ED25F0 /* Products */,
+				467FBE84491AAD48DD57EE9F61DBD835 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		816BCA6CDF7E5D9573E2AA62768AF15C /* Pods-MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				7D81F14E32FD5E136952B722C6DF0D20 /* Pods-MovieList-acknowledgements.markdown */,
+				54213E0957BD740BF7A46C8C2AFE071D /* Pods-MovieList-acknowledgements.plist */,
+				F526E756F3C5EDAF7D784BCF9E256D3F /* Pods-MovieList-dummy.m */,
+				16C28663BD97482FF1440BBB3D029BB7 /* Pods-MovieList-frameworks.sh */,
+				B513ECF457C349C7E7EF7C0F12B0BE1A /* Pods-MovieList-resources.sh */,
+				437DFA998895812DD49AD2FD90B05A4D /* Pods-MovieList.debug.xcconfig */,
+				1FF40CB3C1B7EEF0A063C166E236505C /* Pods-MovieList.release.xcconfig */,
+			);
+			name = "Pods-MovieList";
+			path = "Target Support Files/Pods-MovieList";
+			sourceTree = "<group>";
+		};
+		A19D2761D43DF30EDEF903550B39FA1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31096E8098DC3B65EDDC63BFE0B37116 /* RateView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EFF9C5BEECC6A37A06C7ED131D9C1556 /* Pods-MovieListTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A9FFC64726647AAD830AF3F3BE8C8AD /* Pods-MovieListTests-acknowledgements.markdown */,
+				FC673A525FEF1CC6C5FCCCD6F176C2A5 /* Pods-MovieListTests-acknowledgements.plist */,
+				7F36737635D52952606EC7638E0822B4 /* Pods-MovieListTests-dummy.m */,
+				A83A58B19A2759A2EF6A42E262C1390F /* Pods-MovieListTests-frameworks.sh */,
+				74AFE9BDB2F43E6E3AA5A08EFA8ACEC2 /* Pods-MovieListTests-resources.sh */,
+				AE1497E1AED929550C9D5DD9DEE20926 /* Pods-MovieListTests.debug.xcconfig */,
+				D4094895E48A154A6A30F11EFE5D9B27 /* Pods-MovieListTests.release.xcconfig */,
+			);
+			name = "Pods-MovieListTests";
+			path = "Target Support Files/Pods-MovieListTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F7776730748A081CD1BE183A0E5B9C14 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A21DC1B19C4078B9D6C42883CAE949 /* RateView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		07396C03213B52DEE52097847E38D2FE /* Pods-MovieListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A50E3055495B229F8E5C6BC1540C0BA /* Build configuration list for PBXNativeTarget "Pods-MovieListTests" */;
+			buildPhases = (
+				3C603379487188DF049579DFAF340B57 /* Sources */,
+				984E447D01ABA7B6FE5BD7ADC0D1347A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MovieListTests";
+			productName = "Pods-MovieListTests";
+			productReference = E6F31B20F0F4B3DA5A8BFBDEB0C192D6 /* libPods-MovieListTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B26F9E0BE64663EAA71E77B106E38C0F /* RateView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0C68472B6B033823F76A822991C7D3 /* Build configuration list for PBXNativeTarget "RateView" */;
+			buildPhases = (
+				E07F34032F255983EFDD28CE77F5D6C3 /* Sources */,
+				0DE5B84B10D7C5304ECE2E568669C380 /* Frameworks */,
+				F7776730748A081CD1BE183A0E5B9C14 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RateView;
+			productName = RateView;
+			productReference = 51D76EB67F24C7AC302643731CE7BC77 /* libRateView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C3ACA25058BD96F2C13D0F4C74C2F22A /* Pods-MovieListUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB526B6325CE87F280BB66308EE6E756 /* Build configuration list for PBXNativeTarget "Pods-MovieListUITests" */;
+			buildPhases = (
+				4760F008DA4CEB8F5D0F9B7EC56F65D8 /* Sources */,
+				D8D0424CA5D7D680F90773780D575DC4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MovieListUITests";
+			productName = "Pods-MovieListUITests";
+			productReference = 40E808CB4D6BF9F1CBBB2D060B5871D6 /* libPods-MovieListUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DA577F603382D6DC376C0EC1C379FC14 /* Pods-MovieList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7B7380FD509290BD649B99464E871E6 /* Build configuration list for PBXNativeTarget "Pods-MovieList" */;
+			buildPhases = (
+				B9E662DDB651068CB602BAF3A1BFED01 /* Sources */,
+				D87E13290053994DBE25E0955B921880 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74E80395C86F827FECF540FE304E4EDE /* PBXTargetDependency */,
+			);
+			name = "Pods-MovieList";
+			productName = "Pods-MovieList";
+			productReference = 57F421260D0B840B29D0B15AB55803DC /* libPods-MovieList.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2E1B00237F3A74288F54A54567ED25F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA577F603382D6DC376C0EC1C379FC14 /* Pods-MovieList */,
+				07396C03213B52DEE52097847E38D2FE /* Pods-MovieListTests */,
+				C3ACA25058BD96F2C13D0F4C74C2F22A /* Pods-MovieListUITests */,
+				B26F9E0BE64663EAA71E77B106E38C0F /* RateView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C603379487188DF049579DFAF340B57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF4C508841DBF56D7993B3CB842B540 /* Pods-MovieListTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4760F008DA4CEB8F5D0F9B7EC56F65D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B6BE5036091173398D259E80219117 /* Pods-MovieListUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E662DDB651068CB602BAF3A1BFED01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BA150A9FE8220C29032CD64F6BC0BF4 /* Pods-MovieList-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E07F34032F255983EFDD28CE77F5D6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B81A77706D533708B56DA802FB220B /* RateView-dummy.m in Sources */,
+				7EEA484EB7694FA7284D8DDC85E0BE41 /* RateView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74E80395C86F827FECF540FE304E4EDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RateView;
+			target = B26F9E0BE64663EAA71E77B106E38C0F /* RateView */;
+			targetProxy = C974E1865BF232A92E817E3D72794BDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0353C3A50815F672B853E7F3462450BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FF40CB3C1B7EEF0A063C166E236505C /* Pods-MovieList.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		058638C76DA468F85BC874A75E36656F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4094895E48A154A6A30F11EFE5D9B27 /* Pods-MovieListTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26BD632EA38C4CEF1DC4E7B615E68EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 882D83D1D2EF5DAD6731C4554597B0E9 /* Pods-MovieListUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		869E0E2E94C3AD709961CDC894955423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 437DFA998895812DD49AD2FD90B05A4D /* Pods-MovieList.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		899B963875F57BB21B264F470A6A9EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447D9E2B7E54F7BFA38BE381375D351A /* RateView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/RateView/RateView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A20B0BDFC4838E55DCAD094ED2792393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B2CD73BC5C20EDCA57DDC81FFDF61114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447D9E2B7E54F7BFA38BE381375D351A /* RateView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/RateView/RateView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B53EDD60891CA0A99618C4BA3DEEBB79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F1701ECECBB6E1A77A66481018B7F0C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE1497E1AED929550C9D5DD9DEE20926 /* Pods-MovieListTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDECA9A2AD94656EB6AC6CEBA1C51C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 890A6C6E3D70FAFDC0E8483EFD678537 /* Pods-MovieListUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A50E3055495B229F8E5C6BC1540C0BA /* Build configuration list for PBXNativeTarget "Pods-MovieListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1701ECECBB6E1A77A66481018B7F0C1 /* Debug */,
+				058638C76DA468F85BC874A75E36656F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B53EDD60891CA0A99618C4BA3DEEBB79 /* Debug */,
+				A20B0BDFC4838E55DCAD094ED2792393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F0C68472B6B033823F76A822991C7D3 /* Build configuration list for PBXNativeTarget "RateView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				899B963875F57BB21B264F470A6A9EBB /* Debug */,
+				B2CD73BC5C20EDCA57DDC81FFDF61114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB526B6325CE87F280BB66308EE6E756 /* Build configuration list for PBXNativeTarget "Pods-MovieListUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26BD632EA38C4CEF1DC4E7B615E68EA8 /* Debug */,
+				FDECA9A2AD94656EB6AC6CEBA1C51C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7B7380FD509290BD649B99464E871E6 /* Build configuration list for PBXNativeTarget "Pods-MovieList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869E0E2E94C3AD709961CDC894955423 /* Debug */,
+				0353C3A50815F672B853E7F3462450BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
