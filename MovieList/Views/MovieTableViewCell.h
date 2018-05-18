@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RateView.h"
 
+
 @interface MovieTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *titleMovieLabel;
 @property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *posterImageView;

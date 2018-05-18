@@ -12,4 +12,6 @@
 
 -(NSMutableArray*)moviesList:(NSData*)data;
 -(id)movieByID:(NSData*)data;
+    // return NSArray<NSDictionary*> two pairs key/value = "id":NSNumber, "name":NSString
+-(NSArray*)genresList:(NSData*)data;
 @end

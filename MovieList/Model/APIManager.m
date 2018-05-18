@@ -12,6 +12,8 @@
 @interface APIManager()
 
 @property (strong,nonatomic) ViewDataPresenter *viewPresenter;
+@property(weak,nonatomic) NSURLSession *session;
+@property(weak,nonatomic) NSURLSessionDataTask *dataTask;
 
 @end
 
@@ -21,6 +23,7 @@
     if (self != nil) {
         _apiKey = @"4cd32c21d9ad65dbd45e6b0ddbcdfbbf";
         self.viewPresenter = [[ViewDataPresenter alloc] init];
+        _session = [NSURLSession sharedSession];
     }
     return self;
 }
@@ -33,12 +36,80 @@
     });
     return object;
 }
+-(void)searchMoviesByString:(NSString*)string Page:(NSInteger)page completionBlock:(void(^)(NSArray*, NSError*))completion{
+    [_dataTask cancel];
+    self.pagesCount += 1;
+    //https://api.themoviedb.org/3/search/movie?api_key=4cd32c21d9ad65dbd45e6b0ddbcdfbbf&language=en-US&query=str&page=1&include_adult=false
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/search/movie?api_key=%@&language=en-US&query=%@&page=%li&include_adult=false",self.apiKey,string,page];
+    _dataTask = [_session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil,error);
+            });
+            NSLog(@"%@", error);
+        } else {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSArray *array = [NSArray arrayWithArray:[self.viewPresenter moviesList:data]];
+                completion(array,nil);
+            });
+            return;
+            
+        }
+    }];
+    [_dataTask resume];
+}
+-(void)getMovieListByGenre:(NSNumber *)genreID Page:(NSInteger)page completionBlock:(void (^)(NSArray *, NSError *))completion{
+    [_dataTask cancel];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/discover/movie?api_key=%@&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=%li&with_genres=%@",self.apiKey,page,genreID.stringValue];
+    
+    _dataTask = [_session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil, error);
+            });
+            NSLog(@"%@", error);
+        } else {
+            NSLog(@"API respons %@",[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSArray *objects = [self.viewPresenter moviesList:data];
+                completion(objects,nil);
+            });
+            return;
+            
+        }
+    }];
+    [_dataTask resume];
+}
+-(void)getAllGenres:(void (^)(NSArray*))completion{
+    [_dataTask cancel];
+
+    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/genre/movie/list?api_key=%@&language=en-US",self.apiKey];
+    _dataTask = [_session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            
+            NSLog(@"%@", error);
+        } else {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSArray *array = [NSArray arrayWithArray:[self.viewPresenter genresList:data]];
+                completion(array);
+            });
+            return;
+            
+        }
+    }];
+    [_dataTask resume];
+}
+
 -(void)getMovieByID:(NSNumber*)ID completionBlock:(void (^)(id))completion{
-   
+    [_dataTask cancel];
+
     NSString *str = [ID.stringValue copy];
     NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@?api_key=%@&language=en-US",str,self.apiKey];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    _dataTask = [_session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             
             NSLog(@"%@", error);
@@ -53,9 +124,11 @@
         }
     }];
     
-    [dataTask resume];
+    [_dataTask resume];
 }
 -(void)getMovieList:(void (^)(NSArray *, NSError *))completion{
+    [_dataTask cancel];
+
     self.pagesCount += 1;
     NSDictionary *headers = @{ @"content-type": @"application/json;charset=utf-8",
                                @"authorization": @"Bearer <<access_token>>" };
@@ -70,8 +143,7 @@
     [request setAllHTTPHeaderFields:headers];
     [request setHTTPBody:postData];
     
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+    _dataTask = [_session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     
                                                     if (error) {
@@ -89,7 +161,7 @@
                                                       
                                                     }
                                                 }];
-    [dataTask resume];
+    [_dataTask resume];
 }
 
 @end

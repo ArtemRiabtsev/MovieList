@@ -11,7 +11,13 @@
 #import "FullMovie.h"
 
 @implementation ViewDataPresenter
-
+-(NSArray*)genresList:(NSData *)data{
+    
+    NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[resultDict objectForKey:@"genres"]];
+    
+    return array;
+}
 - (NSMutableArray *)moviesList:(NSData *)data {
     NSMutableArray *array = [[NSMutableArray alloc]init];
     NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

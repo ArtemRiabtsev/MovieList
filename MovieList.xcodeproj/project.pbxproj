@@ -25,6 +25,10 @@
 		ACE3527820AC349E003A01FD /* ImagesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3527620AC349D003A01FD /* ImagesCache.m */; };
 		ACE3527B20AC4E3C003A01FD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3527A20AC4E3C003A01FD /* DetailViewController.m */; };
 		ACE3527D20AC4E53003A01FD /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE3527C20AC4E53003A01FD /* Detail.storyboard */; };
+		ACE3528420AD6545003A01FD /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3528320AD6545003A01FD /* MenuTableViewController.m */; };
+		ACE3528620AD6582003A01FD /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE3528520AD6582003A01FD /* Menu.storyboard */; };
+		ACE3528820ADC881003A01FD /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE3528720ADC881003A01FD /* SearchResult.storyboard */; };
+		ACE3528B20ADCAF9003A01FD /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3528A20ADCAF9003A01FD /* SearchResultTableViewController.m */; };
 		AFF48C931533957474937160 /* libPods-MovieListUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C47EBCDE358AA940ED1F1 /* libPods-MovieListUITests.a */; };
 		FE447F58EE664B7EC1DA81D3 /* libPods-MovieListTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF5B69687B69A3F5FC69108 /* libPods-MovieListTests.a */; };
 /* End PBXBuildFile section */
@@ -88,6 +92,12 @@
 		ACE3527920AC4E3C003A01FD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		ACE3527A20AC4E3C003A01FD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		ACE3527C20AC4E53003A01FD /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		ACE3528220AD6545003A01FD /* MenuTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		ACE3528320AD6545003A01FD /* MenuTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		ACE3528520AD6582003A01FD /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		ACE3528720ADC881003A01FD /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
+		ACE3528920ADCAF9003A01FD /* SearchResultTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
+		ACE3528A20ADCAF9003A01FD /* SearchResultTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		DC3C47EBCDE358AA940ED1F1 /* libPods-MovieListUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieListUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,32 +177,12 @@
 		ACE3522E20AAB6B3003A01FD /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
-				ACE3522F20AAB6B3003A01FD /* AppDelegate.h */,
-				ACE3523020AAB6B3003A01FD /* AppDelegate.m */,
-				ACE3523220AAB6B3003A01FD /* ViewController.h */,
-				ACE3523320AAB6B3003A01FD /* ViewController.m */,
-				ACE3527920AC4E3C003A01FD /* DetailViewController.h */,
-				ACE3527A20AC4E3C003A01FD /* DetailViewController.m */,
-				ACE3527C20AC4E53003A01FD /* Detail.storyboard */,
-				ACE3523520AAB6B3003A01FD /* Main.storyboard */,
+				ACE3527E20AD642F003A01FD /* Controllers */,
+				ACE3528020AD64CA003A01FD /* Views */,
+				ACE3528120AD6510003A01FD /* Model */,
 				ACE3523820AAB6B8003A01FD /* Assets.xcassets */,
-				ACE3523A20AAB6B8003A01FD /* LaunchScreen.storyboard */,
 				ACE3523D20AAB6B8003A01FD /* Info.plist */,
 				ACE3523E20AAB6B8003A01FD /* main.m */,
-				ACE3526B20AAE270003A01FD /* ShortMovie.h */,
-				ACE3526C20AAE270003A01FD /* ShortMovie.m */,
-				ACE3526E20AAE299003A01FD /* FullMovie.h */,
-				ACE3526F20AAE299003A01FD /* FullMovie.m */,
-				ACE3526420AACF7B003A01FD /* PresentDataProtocol.h */,
-				ACE3526520AAD899003A01FD /* ViewDataPresenter.h */,
-				ACE3526620AAD899003A01FD /* ViewDataPresenter.m */,
-				ACE3526120AACBFA003A01FD /* APIManager.h */,
-				ACE3526220AACBFA003A01FD /* APIManager.m */,
-				ACE3527120AAFDE3003A01FD /* MovieTableViewCell.h */,
-				ACE3527220AAFDE3003A01FD /* MovieTableViewCell.m */,
-				ACE3527320AAFDE3003A01FD /* MovieTableViewCell.xib */,
-				ACE3527720AC349E003A01FD /* ImagesCache.h */,
-				ACE3527620AC349D003A01FD /* ImagesCache.m */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -213,6 +203,56 @@
 				ACE3525520AAB6B9003A01FD /* Info.plist */,
 			);
 			path = MovieListUITests;
+			sourceTree = "<group>";
+		};
+		ACE3527E20AD642F003A01FD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACE3523220AAB6B3003A01FD /* ViewController.h */,
+				ACE3523320AAB6B3003A01FD /* ViewController.m */,
+				ACE3527920AC4E3C003A01FD /* DetailViewController.h */,
+				ACE3527A20AC4E3C003A01FD /* DetailViewController.m */,
+				ACE3528220AD6545003A01FD /* MenuTableViewController.h */,
+				ACE3528320AD6545003A01FD /* MenuTableViewController.m */,
+				ACE3528920ADCAF9003A01FD /* SearchResultTableViewController.h */,
+				ACE3528A20ADCAF9003A01FD /* SearchResultTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ACE3528020AD64CA003A01FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACE3527720AC349E003A01FD /* ImagesCache.h */,
+				ACE3527620AC349D003A01FD /* ImagesCache.m */,
+				ACE3527120AAFDE3003A01FD /* MovieTableViewCell.h */,
+				ACE3527220AAFDE3003A01FD /* MovieTableViewCell.m */,
+				ACE3523520AAB6B3003A01FD /* Main.storyboard */,
+				ACE3527C20AC4E53003A01FD /* Detail.storyboard */,
+				ACE3527320AAFDE3003A01FD /* MovieTableViewCell.xib */,
+				ACE3523A20AAB6B8003A01FD /* LaunchScreen.storyboard */,
+				ACE3528520AD6582003A01FD /* Menu.storyboard */,
+				ACE3528720ADC881003A01FD /* SearchResult.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ACE3528120AD6510003A01FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACE3526B20AAE270003A01FD /* ShortMovie.h */,
+				ACE3526C20AAE270003A01FD /* ShortMovie.m */,
+				ACE3526E20AAE299003A01FD /* FullMovie.h */,
+				ACE3526F20AAE299003A01FD /* FullMovie.m */,
+				ACE3526420AACF7B003A01FD /* PresentDataProtocol.h */,
+				ACE3526520AAD899003A01FD /* ViewDataPresenter.h */,
+				ACE3526620AAD899003A01FD /* ViewDataPresenter.m */,
+				ACE3526120AACBFA003A01FD /* APIManager.h */,
+				ACE3526220AACBFA003A01FD /* APIManager.m */,
+				ACE3522F20AAB6B3003A01FD /* AppDelegate.h */,
+				ACE3523020AAB6B3003A01FD /* AppDelegate.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,7 +369,9 @@
 			files = (
 				ACE3523C20AAB6B8003A01FD /* LaunchScreen.storyboard in Resources */,
 				ACE3523920AAB6B8003A01FD /* Assets.xcassets in Resources */,
+				ACE3528820ADC881003A01FD /* SearchResult.storyboard in Resources */,
 				ACE3527520AAFDE3003A01FD /* MovieTableViewCell.xib in Resources */,
+				ACE3528620AD6582003A01FD /* Menu.storyboard in Resources */,
 				ACE3527D20AC4E53003A01FD /* Detail.storyboard in Resources */,
 				ACE3523720AAB6B3003A01FD /* Main.storyboard in Resources */,
 			);
@@ -503,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE3528B20ADCAF9003A01FD /* SearchResultTableViewController.m in Sources */,
 				ACE3526320AACBFA003A01FD /* APIManager.m in Sources */,
 				ACE3526D20AAE270003A01FD /* ShortMovie.m in Sources */,
 				ACE3527420AAFDE3003A01FD /* MovieTableViewCell.m in Sources */,
@@ -513,6 +556,7 @@
 				ACE3523120AAB6B3003A01FD /* AppDelegate.m in Sources */,
 				ACE3527020AAE299003A01FD /* FullMovie.m in Sources */,
 				ACE3527820AC349E003A01FD /* ImagesCache.m in Sources */,
+				ACE3528420AD6545003A01FD /* MenuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -670,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -684,6 +728,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MovieList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,6 +746,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MovieList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

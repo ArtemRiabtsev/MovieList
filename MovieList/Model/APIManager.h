@@ -16,4 +16,7 @@
 +(APIManager*)sharedManager;
 -(void)getMovieList:(void (^)(NSArray *, NSError *))completion;
 -(void)getMovieByID:(NSNumber*)ID completionBlock:(void (^)(id))completion;
+-(void)getAllGenres:(void (^)(NSArray*))completion;
+-(void)getMovieListByGenre:(NSNumber*)genreID Page:(NSInteger)page completionBlock:(void(^)(NSArray*, NSError*))completion;
+-(void)searchMoviesByString:(NSString*)string Page:(NSInteger)page completionBlock:(void(^)(NSArray*, NSError*))completion;
 @end
