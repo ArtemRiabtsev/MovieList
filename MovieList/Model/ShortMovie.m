@@ -9,7 +9,6 @@
 #import "ShortMovie.h"
 
 @implementation ShortMovie
-
 -(instancetype)initWithInfo:(NSString*)title
                      Poster:(NSURL*)poster
                      Genres:(NSArray*)genres
@@ -20,14 +19,14 @@
                      VoteAv:(NSNumber*)vote{
     self = [super init];
     if (self != nil) {
-        _title = [title copy];
-        _posterUrl = [poster copy];
-        _genresIDs = [[NSArray alloc] initWithArray:genres];
-        _overview = [NSString stringWithString:oView];
-        _releaseDate = [NSString stringWithString:date];
-        _movieID = mID;
-        _popularity = pop;
-        _voteAvereng = vote;
+        self.title = [title copy];
+        self.posterUrl = [poster copy];
+        self.genresIDs = [[NSArray alloc] initWithArray:genres];
+        self.overview = [NSString stringWithString:oView];
+        self.releaseDate = [NSString stringWithString:date];
+        self.movieID = [mID copy];
+        self.popularity = [pop copy];
+        self.voteAvereng = [vote copy];
     }
     return self;
 }
@@ -52,4 +51,39 @@
     
     return copy;
 }
+-(NSString*)title{
+    if (_title == nil) {
+        return @"unknown name";
+        
+    }
+    else return _title;
+}
+-(NSString*)releaseDate{
+    if (_releaseDate == nil || [_releaseDate isEqualToString:@""]) {
+        return @"no information";
+        
+    }
+    else return _releaseDate;
+}
+
+
+-(NSString*)overview{
+    if (_overview == nil || [_overview isEqualToString:@""]) {
+        return @"no information";
+    }
+    else return _overview;
+}
+-(NSNumber*)popularity{
+    if (_popularity == nil) {
+        return @1;
+    }
+    else return _popularity;
+}
+-(NSNumber*)voteAvereng{
+    if (_voteAvereng == nil) {
+        return @1;
+    }
+    else return _voteAvereng;
+}
+
 @end

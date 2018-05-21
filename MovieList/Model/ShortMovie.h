@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//conteiner for short movie info (movie list)
 @interface ShortMovie : NSObject<NSCopying>
 
 @property (strong, nonatomic)NSString *title;
-@property ( nonatomic, nullable,strong)NSURL *posterUrl;
+@property (strong, nonatomic)NSURL *posterUrl;
 @property (strong, nonatomic)NSArray *genresIDs;
 @property (strong, nonatomic)NSString *overview;
 @property (strong, nonatomic)NSString *releaseDate;
-@property (weak, nonatomic)NSNumber *movieID;
+@property (strong, nonatomic)NSNumber *movieID;
 @property (strong, nonatomic)NSNumber *popularity;
-@property (strong,nonatomic)NSNumber *voteAvereng;
+@property (strong, nonatomic)NSNumber *voteAvereng;
 
 -(instancetype)initWithInfo:(NSString*)title
                      Poster:(NSURL*)poster

@@ -11,9 +11,8 @@
 #import "FullMovie.h"
 @interface APIManager()
 
-@property (strong,nonatomic) ViewDataPresenter *viewPresenter;
-@property(weak,nonatomic) NSURLSession *session;
-@property(weak,nonatomic) NSURLSessionDataTask *dataTask;
+@property(weak,nonatomic) NSURLSession *session;//object responsible for sending and receiving HTTP requests
+@property(weak,nonatomic) NSURLSessionDataTask *dataTask;// task for HTTP GET requests to retrieve data from servers to memory.
 
 @end
 
@@ -39,7 +38,6 @@
 -(void)searchMoviesByString:(NSString*)string Page:(NSInteger)page completionBlock:(void(^)(NSArray*, NSError*))completion{
     [_dataTask cancel];
     self.pagesCount += 1;
-    //https://api.themoviedb.org/3/search/movie?api_key=4cd32c21d9ad65dbd45e6b0ddbcdfbbf&language=en-US&query=str&page=1&include_adult=false
     
     NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/search/movie?api_key=%@&language=en-US&query=%@&page=%li&include_adult=false",self.apiKey,string,page];
     _dataTask = [_session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -83,6 +81,7 @@
     }];
     [_dataTask resume];
 }
+//from time to time on this request does not find anything
 -(void)getAllGenres:(void (^)(NSArray*))completion{
     [_dataTask cancel];
 
@@ -117,6 +116,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 FullMovie *fullMovie = [self.viewPresenter movieByID:data];
+                NSLog(@"%@ - MOVIE %@",ID,fullMovie);
                 completion(fullMovie);
             });
             return;
@@ -130,38 +130,28 @@
     [_dataTask cancel];
 
     self.pagesCount += 1;
-    NSDictionary *headers = @{ @"content-type": @"application/json;charset=utf-8",
-                               @"authorization": @"Bearer <<access_token>>" };
-    NSDictionary *parameters = @{  };
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+
     NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/popular?page=%li&language=en-US&api_key=%@",(long)self.pagesCount,self.apiKey];
+
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-    [request setAllHTTPHeaderFields:headers];
-    [request setHTTPBody:postData];
-    
-    _dataTask = [_session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    
-                                                    if (error) {
-                                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                                            completion(nil, error);
-                                                        });
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        
-                                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                                             NSArray *objects = [self.viewPresenter moviesList:data];
-                                                            completion(objects,nil);
-                                                        });
-                                                        return;
-                                                      
-                                                    }
-                                                }];
+    _dataTask = [_session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil, error);
+            });
+            NSLog(@"%@", error);
+        } else {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSArray *objects = [self.viewPresenter moviesList:data];
+                completion(objects,nil);
+            });
+            return;
+            
+        }
+    }];
     [_dataTask resume];
+    
 }
 
 @end

@@ -16,17 +16,24 @@
                   ProdCountries:(NSArray*)prodCountries{
     self = [super init];
     if (self != nil) {
-        _runTime = runT;
-        _budget = sum;
-        _genresArray = [genres copy];
-        _prodactCompaniesArray = [prodComp copy];
-        _prodactCountriesArray = [prodCountries copy];
+        self.runTime = runT;
+        self.budget = sum;
+        self.genresArray = [genres copy];
+        self.prodactCompaniesArray = [prodComp copy];
+        self.prodactCountriesArray = [prodCountries copy];
     }
     return self;
 }
 -(NSString*)description{
     
     return [NSString stringWithFormat:@"RunT: %@\nBudget: %@\nGenres: %@\nCompanies: %@\nCountries: %@\n",self.runTime,self.budget,self.genresArray,self.prodactCompaniesArray,self.prodactCountriesArray];
+}
+// if the response from the server NSNull
+-(NSNumber*)runTime{
+    if (_runTime == nil || [_runTime isKindOfClass:[NSNull class]]) {
+        return [NSNumber numberWithInteger:0];
+    }
+    else return _runTime;
 }
 
 @end

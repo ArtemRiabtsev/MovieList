@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RateView.h"
 
-
+//custom cell for movie list
 @interface MovieTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleMovieLabel;

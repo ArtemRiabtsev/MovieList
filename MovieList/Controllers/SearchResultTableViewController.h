@@ -10,8 +10,8 @@
 
 @interface SearchResultTableViewController : UITableViewController
 @property (strong, nonatomic)NSMutableArray *dataArrayForTable;
-@property (strong, nonatomic)NSNumber *pageCount;
-@property (strong,nonatomic)NSString *searchString;
-@property (strong, nonatomic)NSNumber *genreID;
+@property (strong, nonatomic)NSNumber *pageCount;//counter to load subsequent pages
+@property (strong,nonatomic)NSString *searchString;//string for request
+@property (strong, nonatomic)NSNumber *genreID;//A property is needed to search for movies of a certain genre
 
 @end

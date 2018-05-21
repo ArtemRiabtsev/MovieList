@@ -13,7 +13,7 @@
                                             UIPopoverPresentationControllerDelegate,
                                             UISearchBarDelegate>
 
-@property (strong,nonatomic)NSMutableArray *dataArrayForTable;// data for table
+@property (strong,nonatomic)NSMutableArray *dataArrayForTable;// data array for table
 @end
 
 

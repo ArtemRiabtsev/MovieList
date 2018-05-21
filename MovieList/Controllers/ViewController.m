@@ -19,6 +19,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *movieSearchBar;
+@property (strong, nonatomic) IBOutlet UIImageView *placeholderImageView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //class for loading and caching images (https://github.com/MihaelIsaev/ImagesCache)
 @property (strong, nonatomic) ImagesCache *imagesCache;
@@ -35,23 +36,34 @@
     self.tableView.delegate = self;
     self.movieSearchBar.delegate = self;
     
+    
     self.imagesCache = [[ImagesCache alloc] init];
 
     self.dataArrayForTable = [[NSMutableArray alloc] init];
-    [APIManager sharedManager].pagesCount = 0;
+    
+    [APIManager sharedManager].pagesCount = 0;//at the first appearance we load the first page of popular films
     if (self.dataArrayForTable.count > 0) {
         [self.dataArrayForTable removeAllObjects];
     }
+    //request the most popular films
     [[APIManager sharedManager] getMovieList:^(NSArray *array, NSError *error) {
        
         [self.dataArrayForTable addObjectsFromArray:array];
         
+        [self.view sendSubviewToBack:self.placeholderImageView];
         [self.tableView reloadData];
+        
     }];
      
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    if (self.dataArrayForTable.count > 0) {
+        [self.view sendSubviewToBack:self.placeholderImageView];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -62,8 +74,11 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
     [tableView setRowHeight:150.0];
+    
     MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    
     if (![cell isMemberOfClass:[MovieTableViewCell class]]) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieTableViewCell"owner:self options:nil];
         cell = [nib objectAtIndex:0];
@@ -76,7 +91,7 @@
 }
 #pragma mark - UITableView Delegate
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    //when the movies from the first loaded page have run out
     if (indexPath.row == self.dataArrayForTable.count - 1) {
         [[APIManager sharedManager] getMovieList:^(NSArray *array, NSError *error) {
             [self.dataArrayForTable addObjectsFromArray:array];
@@ -89,13 +104,16 @@
                                                                              prefix:@"catalog_big"
                                                                                size:CGSizeMake(90.0f, 150.0f)
                                                                      forUIImageView:((MovieTableViewCell*)cell).posterImageView];
+    if (!((MovieTableViewCell*)cell).posterImageView.image) {
+        [((MovieTableViewCell*)cell).posterImageView setImage:[UIImage imageNamed:@"icons8-image_file"]];
+    }
     [((MovieTableViewCell*)cell).titleMovieLabel setText:movie.title];
     [((MovieTableViewCell*)cell).ratingView setRating:(5 * movie.voteAvereng.floatValue)/10];
     [((MovieTableViewCell*)cell).viewsLabel setText:[NSString stringWithFormat:@"%3f",movie.popularity.floatValue]];
     [((MovieTableViewCell*)cell).releaseDateLabel setText:movie.releaseDate];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    //go to detail movie view
     DetailViewController *detailViewController = [[UIStoryboard storyboardWithName:@"Detail" bundle:nil] instantiateViewControllerWithIdentifier:@"DetailViewController"];    
     detailViewController.shortMovie = [[self.dataArrayForTable objectAtIndex:indexPath.row] copy];
     [self.navigationController pushViewController:detailViewController animated:YES];
@@ -108,11 +126,10 @@
 - (void)didTapAnyButtonFromMenu:(UIButton *)sender {
     
     MenuTableViewController *menuTableViewController = [[UIStoryboard storyboardWithName:@"Menu" bundle:nil] instantiateViewControllerWithIdentifier:@"MenuTableViewController"];
-    
+    //the search by genre was selected
     [[APIManager sharedManager] getAllGenres:^(NSArray *array) {
         
         menuTableViewController.dataArrayForTable = [NSArray arrayWithArray:array];
-        NSLog(@"DATA + + %@",array);
         [menuTableViewController.tableView reloadData];
     }];
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
@@ -127,7 +144,7 @@
         UIViewController *popoverViewController = segue.destinationViewController;
         [popoverViewController setModalPresentationStyle:UIModalPresentationPopover];
         
-        for(UIButton *obj in popoverViewController.view.subviews){//add action for choice
+        for(UIButton *obj in popoverViewController.view.subviews){//add action for choice buttons from popover view
             
             [obj addTarget:self action:@selector(didTapAnyButtonFromMenu:) forControlEvents:UIControlEventTouchUpInside];
         }
@@ -153,11 +170,12 @@
     if (searchBar.text != nil && [searchBar.text isEqualToString:@""] == NO) {
         SearchResultTableViewController *resultViewController = [[SearchResultTableViewController alloc] init];
         
+        //remove spaces from the string
         NSArray* words = [searchBar.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         resultViewController.searchString = [words componentsJoinedByString:@"&"];
         
         resultViewController.pageCount = [NSNumber numberWithInteger:1];
-        
+        //search request to the server
         [[APIManager sharedManager] searchMoviesByString:resultViewController.searchString
                                                     Page:resultViewController.pageCount.integerValue
                                          completionBlock:^(NSArray *array, NSError *error) {
@@ -171,6 +189,7 @@
             }
             
         }];
+        //go to results
         [self.navigationController pushViewController:resultViewController animated:YES];
         [searchBar resignFirstResponder];
     }

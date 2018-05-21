@@ -14,7 +14,7 @@
 
 @interface DetailViewController ()
 @property (strong,nonatomic)FullMovie *fullMovie;
-@property (strong,nonatomic)RateView *ratingView;
+@property (strong,nonatomic)RateView *ratingView;//rate stars
 @end
 
 @implementation DetailViewController
@@ -30,13 +30,16 @@
     [self.ratingView setStarFillColor:[UIColor yellowColor]];
     [self.ratingView setStarNormalColor:[UIColor clearColor]];
     [self.ratingView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-        //- image
+        //class for loading and caching images (https://github.com/MihaelIsaev/ImagesCache)
     ImagesCache *imgCashe = [[ImagesCache alloc] init];
     self.posterView.image = [imgCashe getImageWithURL:self.shortMovie.posterUrl.absoluteString
                                                prefix:@"catalog_big"
                                                  size:CGSizeMake(170.0f, 230.0f)
                                        forUIImageView:self.posterView];
-
+    if (!self.posterView.image) {
+        [self.posterView setImage:[UIImage imageNamed:@"icons8-image_file"]];
+    }
+    
     [self.releaseDateLabel setText:self.shortMovie.releaseDate];
     [self.popularityLabel setText:self.shortMovie.popularity.stringValue];
     [self.titleLabel setText:self.shortMovie.title];
@@ -48,11 +51,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    NSLog(@"RATING VIEW %@ Rating %f",self.ratingView.description, self.ratingView.rating);
+    //request deteil movie info
     [[APIManager sharedManager] getMovieByID:self.shortMovie.movieID
                              completionBlock:^(FullMovie *movie) {
                                  
                                  self.fullMovie = movie;
+                                 [self.genresLabel setText:[self stringFromArtrayOfDictionaries:self.fullMovie.genresArray]];
+                                 [self.companiesLabel setText:[self stringFromArtrayOfDictionaries:self.fullMovie.prodactCompaniesArray]];
+                                 [self.countriesLabel setText:[self stringFromArtrayOfDictionaries:self.fullMovie.prodactCountriesArray]];
                                  [self.budgetLabel setText:self.fullMovie.budget.stringValue];
                                  [self.durationLabel setText:self.fullMovie.runTime.stringValue];
                              }];
@@ -62,7 +68,27 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:YES];
 }
+#pragma mark Methods
 
+-(NSString*)stringFromArtrayOfDictionaries:(NSArray*)array{
+    
+    NSMutableString* resultString = [NSMutableString string];
+    for(NSDictionary *obj in array){
+        [resultString appendString:[obj valueForKey:@"name"]];
+    }
+    for (int i = 0;  i < array.count; i++) {
+        NSDictionary *dict = [array objectAtIndex:i];
+        [resultString appendString:[dict valueForKey:@"name"]];
+        if (i < array.count -1) {
+            [resultString appendString:@", "];
+        }
+        else{
+            [resultString appendString:@"."];
+        }
+    }
+    
+    return resultString;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
